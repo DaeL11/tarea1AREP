@@ -6,6 +6,7 @@ public class SparkWebApp
 {
     public static void main( String[] args ){
         port(getPort());
+        staticFiles.location("/public");
         get("/hello", (req, res) -> "Hello Heroku");
         get("/stock", (req, res) -> {
             res.type("application/json");
