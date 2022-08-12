@@ -12,7 +12,7 @@ public class HttpConnection{
     private static final String USER_AGENT = "Mozilla/5.0";
     private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo";
 
-    public static void main(String[] args) throws IOException {
+    public static String getStock() throws IOException {
 
         URL obj = new URL(GET_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -35,11 +35,13 @@ public class HttpConnection{
             in.close();
 
             // print result
-            System.out.println(response.toString());
+            //System.out.println(response.toString());
+            return response.toString();
         } else {
             System.out.println("GET request not worked");
         }
-        System.out.println("GET DONE");
+        //System.out.println("GET DONE");
+        return "GET request not worked";
     }
 
 } 
