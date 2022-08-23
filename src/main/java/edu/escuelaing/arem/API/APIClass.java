@@ -15,6 +15,11 @@ public class APIClass{
     private StringBuilder query;
     private Cache cache = Cache.getInstance();
 
+    /**
+     * Constructor de la clase
+     * @param function 
+     * @param symbol
+     */
     public APIClass(String function, String symbol) {
         buildParameters();
         input.add(function);
@@ -22,11 +27,17 @@ public class APIClass{
         buildQuery();
     }
 
+    /**
+     * Funcion que agrega al arraylist la funcion y el simbolo
+     */
     public void buildParameters() {
         parameters.add("function=");
         parameters.add("&symbol=");
     }
 
+    /**
+     * Funcion que se encarga de construir el URL del API a partir de extraer la funcion y simbolo del objeto a parte del API_KEY
+     */
     public void buildQuery() {
         query = new StringBuilder();
         byte counter = 0;
@@ -44,6 +55,11 @@ public class APIClass{
         query.append(API_KEY);
     }
 
+    /**
+     * Funcion encargada de la conexion con la URL del API
+     * @return 
+     * @throws IOException
+     */
     public String getStock() throws IOException {
         String response = "GET request not worked";
         if (cache.contains(query.toString())) {

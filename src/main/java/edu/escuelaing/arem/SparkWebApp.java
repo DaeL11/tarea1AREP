@@ -10,6 +10,10 @@ import edu.escuelaing.arem.API.*;
 
 public class SparkWebApp
 {
+    /**
+     * Funcion principal
+     * @param args
+     */
     public static void main( String[] args ){
         port(getPort());
         staticFiles.location("/public");
@@ -21,6 +25,12 @@ public class SparkWebApp
         });
     }
 
+    /**
+     * Funcion que se encarga de crear el objeto de acuerdo a la eleccion del usuario
+     * @param req request
+     * @return response del objeto
+     * @throws IOException
+     */
     private static String identifyFunction(Request req) throws IOException {
         String res = "";
         switch (req.queryParams("function")) {
@@ -43,6 +53,10 @@ public class SparkWebApp
         return res;
     }
 
+    /**
+     * Funcion con el fin de obtener el puerto por el cual correra el programa
+     * @return puerto 
+     */
     private static int getPort(){
         if (System.getenv("PORT") != null){
             return Integer.parseInt(System.getenv("PORT"));
