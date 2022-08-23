@@ -9,12 +9,12 @@
 }
 
 .visual-name {
-    color: black;
+    color: white;
 }
 
 .visual-array {
-    background-color: #FFD8BB;
-    border: thin solid #FFB780;
+    background-color: black;
+    border: thin solid black;
 }
 
 .visual-object {
