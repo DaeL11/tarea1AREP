@@ -3,18 +3,18 @@ package edu.escuelaing.arem;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpConnection{
 
     private static final String USER_AGENT = "Mozilla/5.0";
-    private static final String GET_URL = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo";
+    public HttpConnection(){
+    }
 
-    public static String getStock() throws IOException {
+    public String getStock(String query) throws IOException {
 
-        URL obj = new URL(GET_URL);
+        URL obj = new URL(query);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
         con.setRequestMethod("GET");
         con.setRequestProperty("User-Agent", USER_AGENT);
