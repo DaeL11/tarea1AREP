@@ -1,4 +1,4 @@
-package edu.escuelaing.arem.API;
+package edu.escuelaing.arem;
 import java.util.HashMap;
 
 public class Cache {

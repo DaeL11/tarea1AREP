@@ -66,7 +66,7 @@ class Alpha extends React.Component {
                 <input
                   required
                   type="text"
-                  placeholder="ej. 1min, 5min ..."
+                  placeholder="Values are supported: 1min, 5min, 15min, 30min"
                   value={this.state.interval}
                   onChange={this.handleChangeInputInterval}
                 ></input>
@@ -78,7 +78,7 @@ class Alpha extends React.Component {
             <input
               required
               type="text"
-              placeholder="ej. IBM, MSFT..."
+              placeholder="Example: IBM"
               value={this.state.symbol}
               onChange={this.handleChangeInput}
             ></input>

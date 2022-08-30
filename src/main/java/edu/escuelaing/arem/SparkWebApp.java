@@ -18,7 +18,7 @@ public class SparkWebApp
         port(getPort());
         staticFiles.location("/public");
         post("/hello", (req, res) -> "Hello " + req.queryParams("name"));
-        get("/hello", (req, res) -> "Hello Heroku");
+        get("/hello", (req, res) -> "Hello " + req.queryParams("name"));
         get("/stock", (req, res) -> {
             res.type("application/json");
             return identifyFunction(req);
@@ -47,7 +47,7 @@ public class SparkWebApp
                 res = new Monthly(req.queryParams("symbol")).getStock();
                 break;
             default:
-                res = "Invalid function";
+                res = "Funcion invalida!";
                 break;
         }
         return res;

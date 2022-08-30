@@ -1,14 +1,16 @@
-package edu.escuelaing.arem.API;
+package edu.escuelaing.arem;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import edu.escuelaing.arem.HttpConnection;
 
 public class APIClass{
 
 
-    private static final String GET_URL = "https://www.alphavantage.co/query?";
-    private static final String API_KEY = "&apikey=8US7JKS3WL37HQK9";
+    /**
+     * Valor de los atributos GET_URL Y API_KEY predeterminados
+     */
+    private String GET_URL = "https://www.alphavantage.co/query?";
+    private String API_KEY = "&apikey=8US7JKS3WL37HQK9";
 
     protected ArrayList<String> parameters = new ArrayList<>();
     protected ArrayList<String> input = new ArrayList<>();
@@ -20,10 +22,11 @@ public class APIClass{
      * @param function 
      * @param symbol
      */
-    public APIClass(String function, String symbol) {
-        buildParameters();
-        input.add(function);
-        input.add(symbol);
+    public APIClass(String url, String key) {
+        if(url!=null && key != null){
+            this.GET_URL = url;
+            this.API_KEY = key;
+        }
         buildQuery();
     }
 
@@ -31,12 +34,11 @@ public class APIClass{
      * Funcion que agrega al arraylist la funcion y el simbolo
      */
     public void buildParameters() {
-        parameters.add("function=");
-        parameters.add("&symbol=");
     }
 
     /**
-     * Funcion que se encarga de construir el URL del API a partir de extraer la funcion y simbolo del objeto a parte del API_KEY
+     * Funcion que se encarga de construir el URL del API a partir de 
+     * extraer la funcion y simbolo del objeto a parte del API_KEY
      */
     public void buildQuery() {
         query = new StringBuilder();
@@ -48,7 +50,7 @@ public class APIClass{
                 query.append(input.get(counter));
             } catch (IndexOutOfBoundsException indexBounds) {
                 System.out.println("Intended out of bounds error access. Skipping");
-                System.out.println("In AlphaVantageQuery.java - buildQuery()");
+                System.out.println(indexBounds.getMessage());
             }
             counter++;
         }

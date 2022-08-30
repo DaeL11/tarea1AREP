@@ -1,5 +1,7 @@
 package edu.escuelaing.arem.API;
 
+import edu.escuelaing.arem.APIClass;
+
 public class IntraDay extends APIClass {
 
     public IntraDay(String symbol, String interval) {
