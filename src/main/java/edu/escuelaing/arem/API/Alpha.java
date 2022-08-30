@@ -12,8 +12,8 @@ public class Alpha extends APIClass{
 
     /**
      * Constructor de la clase
-     * @param function 
-     * @param symbol
+     * @param function funcion
+     * @param symbol identificador de una accion
      */
     public Alpha(String function, String symbol) {
         super(GET_URL, API_KEY);

@@ -12,6 +12,12 @@ public class HttpConnection{
     public HttpConnection(){
     }
 
+    /**
+     *  Realiza la conexion con la URL
+     * @param query
+     * @return
+     * @throws IOException
+     */
     public String getStock(String query) throws IOException {
 
         URL obj = new URL(query);

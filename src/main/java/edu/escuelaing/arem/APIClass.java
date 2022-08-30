@@ -19,14 +19,22 @@ public class APIClass{
 
     /**
      * Constructor de la clase
-     * @param function 
-     * @param symbol
+     * @param url url de la function
+     * @param key llave de la function
      */
     public APIClass(String url, String key) {
         if(url!=null && key != null){
             this.GET_URL = url;
             this.API_KEY = key;
         }
+        buildQuery();
+    }
+
+    /**
+     * Constructor que no recibe ningun parametro
+     * por lo que utiliza el url y key predeterminado
+     */
+    public APIClass(){
         buildQuery();
     }
 
@@ -59,7 +67,7 @@ public class APIClass{
 
     /**
      * Funcion encargada de la conexion con la URL del API
-     * @return 
+     * @return response
      * @throws IOException
      */
     public String getStock() throws IOException {

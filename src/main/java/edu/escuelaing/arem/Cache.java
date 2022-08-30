@@ -21,7 +21,7 @@ public class Cache {
     /***
      * Funcion que retorna el valor contenido en la llave deseada
      * @param key
-     * @return
+     * @return value
      */
     public String getKey(String key) {
         return cache.get(key);
@@ -30,7 +30,7 @@ public class Cache {
     /**
      * Funcion que retorna si se encuentra la llave en el Map
      * @param key
-     * @return
+     * @return boolean 
      */
     public boolean contains(String key) {
         return cache.containsKey(key);
@@ -38,7 +38,7 @@ public class Cache {
 
     /**
      * Funcion que retorna el objeto de tipo Cache
-     * @return
+     * @return isntance de Cache (Singleton)
      */
     public static Cache getInstance() {
         return instance;
