@@ -1,7 +1,7 @@
 # TAREA INTRODUCCIÓN MVN-GIT Y HEROKU
 ## AREP-1
 ### Diego Leon [diegoleonb](https://github.com/diegoleonb)
-#### 2020-2
+#### 2022-2
 
 
 ## SparkWep
